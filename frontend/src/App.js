@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import ErrorPage from "./pages/ErrorPage";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import UploadImage from "./pages/UploadImage";
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
           <Route path='/' element={<Home />} />
 
           <Route path="*" element={<ErrorPage />}></Route>
+          <Route path="/upload" element={<UploadImage />} />
         </Routes>
       </div>
 
