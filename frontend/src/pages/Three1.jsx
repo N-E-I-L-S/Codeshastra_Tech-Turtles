@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import Obj from "../components/Three2.jsx";
+import Obj1 from "../components/Obj1.jsx";
+import Obj2 from "../components/Obj2.jsx";
 import { OrthographicCamera, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
+import Floor from "../components/Floor.jsx";
+import Room from "../components/Room.jsx";
 
 export default function Three1() {
   const [isDragging, setIsDragging] = useState(false);
@@ -15,7 +18,7 @@ export default function Three1() {
         intensity={0.5}
       />
 
-      <mesh
+      {/* <mesh
         rotation={[-Math.PI / 2, 0, 0]}
         position={[0, 0.05, 0]}
         receiveShadow
@@ -26,15 +29,17 @@ export default function Three1() {
           side={THREE.DoubleSide}
           receiveShadow
         />
-      </mesh>
+      </mesh> */}
 
       {/* <planeHelper args={[floorPlane, 5, "red"]} /> */}
 
       {/* <gridHelper args={[100, 100]} /> */}
 
-      <Obj setIsDragging={setIsDragging} floorPlane={floorPlane} />
-      <Obj setIsDragging={setIsDragging} floorPlane={floorPlane} /> 
-
+      <Obj1 setIsDragging={setIsDragging} floorPlane={floorPlane} />
+      <Obj2 setIsDragging={setIsDragging} floorPlane={floorPlane} />
+      {/* <Obj setIsDragging={setIsDragging} floorPlane={floorPlane} />  */}
+        {/* <Floor/> */}
+      <Room/>
       <OrthographicCamera makeDefault zoom={50} position={[0, 40, 200]} />
 
       <OrbitControls minZoom={10} maxZoom={50} enabled={!isDragging} />
