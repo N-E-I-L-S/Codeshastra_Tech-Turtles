@@ -2,9 +2,32 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 from datetime import datetime
+import urllib.request
+import os
+
+def save_image():
+# URL of the image
+    url = "https://firebasestorage.googleapis.com/v0/b/codeshastra-tech-turtles.appspot.com/o/files%2FWhatsApp%20Image%202022-09-09%20at%2010.48.30%20AM.jpeg?alt=media&token=ba6ac7a1-d4fe-4a1d-8794-ad00c5940576"
+
+# Read the image from the URL
+    with urllib.request.urlopen(url) as url_response:
+        img_array = np.asarray(bytearray(url_response.read()), dtype=np.uint8)
+        img = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
+
+# Save the image to your device
+    cv2.imwrite("saved_image.jpg", img)
 
 def readImage(img_name):
-    img = cv2.imread('./public/images/' + img_name)
+
+    url= "https://firebasestorage.googleapis.com/v0/b/codeshastra-tech-turtles.appspot.com/o/files%2FWhatsApp%20Image%202022-09-09%20at%2010.48.30%20AM.jpeg?alt=media&token=ba6ac7a1-d4fe-4a1d-8794-ad00c5940576"
+
+    path_to_folder='./public/user_images'
+    image_name = os.path.join(path_to_folder, 'image.jpg')
+    urllib.request.urlretrieve(url, image_name)
+    cv2.imwrite(os.path.join(path_to_folder,image_name))
+
+    img = cv2.imread(path_to_folder + img_name)
+
     return cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
 
@@ -40,7 +63,7 @@ def resizeAndPad(img, size, pad_color=0):
         pad_left, pad_right, pad_top, pad_bot = 0, 0, 0, 0
 
     # set pad color
-    if len(img.shape) is 3 and not isinstance(pad_color, (list, tuple, np.ndarray)): # color image but only one color provided
+    if len(img.shape) == 3 and not isinstance(pad_color, (list, tuple, np.ndarray)): # color image but only one color provided
         pad_color = [pad_color]*3
 
     # scale and pad
@@ -100,6 +123,7 @@ def mergeImages(img, colored_image, wall):
 
 def saveImage(img_name, img):
     img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+    # print(type(img))
     cv2.imwrite( "./public/edited/" + img_name, img)
 
 
@@ -136,7 +160,7 @@ def changeColor(image_name, position, new_color, pattern_image):
     
 
 
-# changeColor('img3.jpg', (300, 100), [105, 149, 173], None)
+changeColor('img3.jpg', (300, 100), [0, 100, 100], None)
 # changeColor('img3.jpg', (300, 100), None, 'pattern3.jpg')
 
 # PINK: 220, 180, 170
