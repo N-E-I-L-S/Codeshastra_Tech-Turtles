@@ -8,7 +8,7 @@ function App() {
 
 
   return (
-    <div className="">
+    <div className="app">
 
       <Navbar />
       <div className='min-h-screen'>

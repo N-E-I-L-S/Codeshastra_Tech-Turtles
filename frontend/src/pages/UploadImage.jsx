@@ -2,7 +2,7 @@ import { useState } from "react";
 import { storage } from '../firebase/firebase_config';
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { SketchPicker, ChromePicker } from 'react-color'
-import './UploadImage.css'
+// import './UploadImage.css'
 
 function UploadImage() {
     const [imgUrl, setImgUrl] = useState(null);
@@ -20,22 +20,24 @@ function UploadImage() {
         }
     };
 
-    function sendtoml(){
-        function PostRequest (){
-        fetch('' 
-        ,{
-        method : 'POST',
-        mode : 'cors',
-         body :JSON.stringify({
-              color: color,
-              url : imgUrl
-         }),
-        headers : {
-         'Content-type' : 'application/json' 
-         }})}
-         console.log(color)
-         console.log(imgUrl)
-         PostRequest()
+    function sendtoml() {
+        function PostRequest() {
+            fetch(''
+                , {
+                    method: 'POST',
+                    mode: 'cors',
+                    body: JSON.stringify({
+                        color: color,
+                        url: imgUrl
+                    }),
+                    headers: {
+                        'Content-type': 'application/json'
+                    }
+                })
+        }
+        console.log(color)
+        console.log(imgUrl)
+        PostRequest()
     }
 
     const handleSubmit = (e) => {
@@ -67,12 +69,16 @@ function UploadImage() {
 
 
 
+
     return (
-        <div className="uploadImage">
-            <form onSubmit={handleSubmit} className='uploadImage-form'>
-                <input type='file' />
-                
-                {/* <SketchPicker
+        <>
+           
+
+            <div className="mx-auto w-full border border-red-400 " >
+                <form onSubmit={handleSubmit} className=''>
+                    <input type='file' className="rounded-lg shadow-lg" />
+
+                    {/* <SketchPicker
                     width={200}
                     height={200}
                     color="#ff0000"
@@ -84,9 +90,9 @@ function UploadImage() {
                     onChangeComplete={handleChangeComplete}
                     disableAlpha={true}
                 /> */}
-                <button type='submit'>Upload</button>
-            </form>
-            {hidden && (
+                    <button type='submit'>Upload</button>
+                </form>
+                {hidden && (
                     <SketchPicker
                         styles={pickerStyle}
                         color={color}
@@ -97,19 +103,16 @@ function UploadImage() {
                 <button type="none" onClick={() => setHidden(!hidden)}>
                     {hidden ? "Close Color Picker" : "Open Color Picker"}
                 </button>
-            {
-                !imgUrl &&
-                <div className='uploadImage-outerbar'>
-                    <div className='uploadimage-innerbar' style={{ width: `${progresspercent}%` }}>{progresspercent}%</div>
-                </div>
-            }
-            {
-                imgUrl &&
-                <div className='uploadImage-outerbar'>
-                    <img src={imgUrl} alt='uploaded file' height={200} />
-                </div>
-            }
-        </div>
+                {
+                    !imgUrl &&
+                    <div className=''>
+                        <div className='' style={{ width: `${progresspercent}%` }}>{progresspercent}%</div>
+                    </div>
+                }
+
+            </div>
+
+        </>
     );
 }
 export default UploadImage;

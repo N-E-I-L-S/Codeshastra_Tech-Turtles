@@ -11,8 +11,8 @@ export default function Home() {
 
       <div className="container p-8 mx-auto text-center ">
         <div className="text-area font-nun font-black text-[#3329e0]">
-          <h2 className="text-3xl md:text-5xl my-14">
-            A Fresh Coat of Paint, Without the Mess
+          <h2 className="text-3xl md:text-5xl pb-5">
+            Unleash Your Creativity and See Your Vision Come to Life
           </h2>
           <div className="mx-1 p-0 lg:mx-14 py-0 md:px-14 mb:py-2">
             <p className="text-md md:text-xl text-gray-800 font-light mx-auto">
@@ -20,17 +20,16 @@ export default function Home() {
             </p>
           </div>
         </div>
-        
+
       </div>
       <div
         className="container flex flex-col-reverse md:flex-row justify-center items-center w-full my-12 mx-auto font-nun p-8">
         <div className="left w-full md:w-1/2 text-center md:text-left" data-aos="fade-right">
           <h1 className="text-3xl md:text-4xl font-extrabold text-[#3329e0]">
-            Visually create webpages and export to Html, React or Vue
+          A Fresh Coat of Paint, Without the Mess
           </h1>
           <p className="my-6">
-            Create and edit beautiful designs and prototypes and export the code
-            to use in your project right away.
+            Try out and experiment with different colors and styles to see how they look on your home. 
           </p>
           <p className="">
             Windframe as a tailwind builder and editor makes it possible to
@@ -39,7 +38,7 @@ export default function Home() {
             <span className="font-bold">HTML, REACT OR VUE.</span>
           </p>
           <button className="bg-[#3329e0] shadow-lg text-white px-8 py-4 rounded-full mt-12 hover:bg-[#ccc9ff] ease-in transition-all duration-300 hover:text-[#3329e0]">
-          Transform Your Home with Just a Click
+            Transform Your Home with Just a Click
           </button>
         </div>
         <img className="w-full md:w-1/2 my-6 md:my-0 border border-red-500" data-aos="fade-left"
@@ -111,46 +110,6 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container w-full mx-auto p-8 text-center font-nun font-medium">
-        <h2 className="text-2xl mb-3">Export code to:</h2>
-        <ul className="grid grid-cols-2 gap-2 justify-items-center sm:grid-cols-3 xl:grid-cols-6 mt-12 mb-20 " data-aos="zoom-in-down">
-          <li className="font-nun text-xl mb-4 mx-3 font-light flex flex-col">
-            <img className="my-3 w-20" src="../src/images/icons/html-5.svg" alt="s" />HTML
-          </li>
-          <li className="font-nun text-xl mb-4 mx-3 font-light flex flex-col">
-            <img className="my-3 w-20" src="../src/images/icons/react-native.svg" alt="s" />React
-          </li>
-          <li className="font-nun text-xl mb-4 mx-3 font-light flex flex-col">
-            <img className="my-3 w-20" src="../src/images/icons/gatsbyjs.svg" alt="s" />Gatsby
-          </li>
-          <li className="font-nun text-xl mb-4 mx-3 font-light flex flex-col">
-            <img className="my-3 w-20" src="../src/images/icons/vue-js.svg" alt="s" />Vue
-            Js
-          </li>
-          <li className="font-nun text-xl mb-4 mx-3 font-light flex flex-col">
-            <img className="my-3 w-20" src="../src/images/icons/nuxt-js.png" alt="s" />Nuxt Js
-          </li>
-          <li className="font-nun text-xl mb-4 mx-3 font-light flex flex-col">
-            <img className="my-3 w-20" src="../src/images/icons/angularjs.svg" alt="s" />Angular
-          </li>
-        </ul>
-      </div>
-      <section className="bg-[#1A202C] py-16 pb-8">
-        <div className="text text-center px-8 md:px-28">
-          <h2 className="font-nun text-3xl md:text-6xl font-medium text-white">
-            Visually design and Generate code for your frontend
-          </h2>
-          <button className="px-3 py-2 bg-green-600 hover:bg-green-700 rounded-md shadow-lg text-white text-md font-nun font-light mt-8">
-            Start building for free
-          </button>
-        </div>
-        <div className="p-12">
-          <video className=""
-            src="https://d33wubrfki0l68.cloudfront.net/3bc16990b655f1e010ea01d22b97bcf4dcc32964/f3f16/static/windframe-8ed8b799e6f4aee96fd251598d5ccece.mp4"
-            muted loop autoplay></video>
-        </div>
-      </section>
-
       <section
         className="container flex flex-col-reverse md:flex-row justify-center items-center w-full my-12 mx-auto font-nun p-8">
         <img className="w-full md:w-1/2 my-6 md:my-0" data-aos="zoom-in-right"
@@ -213,41 +172,6 @@ export default function Home() {
           </button>
         </div>
       </section>
-      <section className="bg-[#1A202C] py-16 pb-8 text-white">
-        <div className="text text-center px-8 md:px-28">
-          <h2 className="font-nun text-3xl md:text-4xl font-medium text-white">
-            Create the perfect webpage you visualized in 2 minutes.
-          </h2>
-          <p className="my-6">
-            Get projects to production faster than ever thought possible with very
-            minimal effort.
-          </p>
-        </div>
-        <div className="p-12">
-          <img
-            src="https://d33wubrfki0l68.cloudfront.net/ed50ad54844a48f3e30cb1f935ab074191310ca7/a291e/static/edit-321f194f30bb4468ee495fe4b35bfc22.gif"
-            alt="" />
-        </div>
-      </section>
-
-
-      <section className="w-full p-8 pt-10">
-        <ul className="font-nun grid grid-cols-2 gap-8 md:grid-cols-4">
-          <li className="text-center flex flex-col md:border-r md:border-gray-400">
-            <span className="text-6xl my-4 font-black text-[#3329e0]">8K+</span>DESGINS EXPORTED
-          </li>
-          <li className="text-center flex flex-col md:border-r md:border-gray-400">
-            <span className="text-6xl my-4 font-black text-[#3329e0]">1K+</span>SAVED
-            PROJECTS
-          </li>
-          <li className="text-center flex flex-col md:border-r md:border-gray-400">
-            <span className="text-6xl my-4 font-black text-[#3329e0]">2K+</span>USERS
-          </li>
-          <li className="text-center flex flex-col">
-            <span className="text-6xl my-4 font-black text-[#3329e0]">350+</span>TEMPLATES
-          </li>
-        </ul>
-      </section>
 
       <section className="bg-[#1A202C] py-16 pb-8 text-white">
         <div className="text text-center px-8 md:px-28">
@@ -266,24 +190,7 @@ export default function Home() {
 
 
       <section className="fotter p-3 md:p-8 mt-6">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between w-full my-3">
-          <div className="news font-nun">
-            <h3 className="text-xl md:text-3xl font-medium">
-              Subscribe to our Newsletter
-            </h3>
-            <p className="text-sm md:text-md my-4 ">
-              Get notified first when we release new updates, tools and resources
-            </p>
-            <div className="my-4 w-full flex flex-row">
-              <input className="rounded-md border py-2 px-8 w-full border-gray-500" type="email" name="" id="" />
-              <button
-                className="bg-[#ccc9ff] shadow-md rounded-md text-[#3329e0] py-2 px-6 mx-2 cursor-pointer hover:bg-blue-700 hover:text-white ease-in transition-all duration-300"
-                type="submit">
-                Join
-              </button>
-            </div>
-          </div>
-        </div>
+
         <div className="flex flex-col md:flex-row items-center mx-auto md:mx-0 justify-between w-full p-4 ">
           <div className="dev font-nun w-full md:w-1/2 mt-12 md:mt-0">
             <div className="flex flex-row items-center justify-start">

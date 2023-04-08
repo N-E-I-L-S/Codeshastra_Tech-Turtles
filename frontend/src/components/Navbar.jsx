@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
     return (
-        <nav className="flex justify-between items-center md:p-2 p-2 fixed w-full backdrop-blur-md z-10">
+        <nav className="flex justify-between items-center md:p-2 p-2 sticky top-0 w-full backdrop-blur-md z-10 mb-20">
             <div className="left flex flex-row items-center">
                 <div className="logo w-10 mr-5">
                     <img
@@ -13,20 +13,12 @@ const Navbar = () => {
                 <div className="menu">
                     <ul className="md:flex flex-row items-center font-nun text-md hidden">
                         <li>
-                            <NavLink className="mx-2 hover:text-[#3329e0] duration-300" href="#">Blocks</NavLink>
+                            <NavLink className="mx-2 hover:text-[#3329e0] duration-300" to="/">Home</NavLink>
                         </li>
                         <li>
-                            <NavLink className="mx-2 hover:text-[#3329e0] duration-300" href="#">From Builder</NavLink>
+                            <NavLink className="mx-2 hover:text-[#3329e0] duration-300" to="/upload">Upload</NavLink>
                         </li>
-                        <li>
-                            <NavLink className="mx-2 hover:text-[#3329e0] duration-300" href="#">Pricing</NavLink>
-                        </li>
-                        <li>
-                            <NavLink className="mx-2 hover:text-[#3329e0] duration-300" href="#">Blog</NavLink>
-                        </li>
-                        <li>
-                            <NavLink className="mx-2 hover:text-[#3329e0] duration-300" href="#">Support</NavLink>
-                        </li>
+
                     </ul>
                 </div>
             </div>
