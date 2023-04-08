@@ -3,6 +3,18 @@ import Navbar from '../components/Navbar';
 import mySvg from '../assets/blurry-gradient-haikei.svg';
 import myImg from '../assets/bg_img.jpg';
 import WaveSvg from '../assets/wave.svg';
+import img1 from '../assets/img1.jpg'
+import img2 from '../assets/img2.jpg'
+import img3 from '../assets/img3.jpg'
+import img4 from '../assets/img4.jpg'
+import img5 from '../assets/img5.jpg'
+import img6 from '../assets/img6.jpg'
+import img7 from '../assets/img7.jpg'
+import img8 from '../assets/img8.jpg'
+import img9 from '../assets/img9.jpg'
+import img10 from '../assets/img10.jpg'
+
+import vid1 from '../assets/hame_page_vid.mp4'
 
 export default function Home() {
   return (
@@ -21,112 +33,58 @@ export default function Home() {
           </div>
         </div>
 
+
+
       </div>
+
       <div
         className="container flex flex-col-reverse md:flex-row justify-center items-center w-full my-12 mx-auto font-nun p-8">
         <div className="left w-full md:w-1/2 text-center md:text-left" data-aos="fade-right">
           <h1 className="text-3xl md:text-4xl font-extrabold text-[#3329e0]">
-          A Fresh Coat of Paint, Without the Mess
+            A Fresh Coat of Paint, Without the Mess
           </h1>
           <p className="my-6">
-            Try out and experiment with different colors and styles to see how they look on your home. 
-          </p>
-          <p className="">
-            Windframe as a tailwind builder and editor makes it possible to
-            visually create webpages and make edits to them in real time. This
-            webpages can then be easily exported to different formats like
-            <span className="font-bold">HTML, REACT OR VUE.</span>
+            Try out and experiment with different colors and styles to see how they look on your home.
+            Transform you home with just a click. Try out our best AI services.
           </p>
           <button className="bg-[#3329e0] shadow-lg text-white px-8 py-4 rounded-full mt-12 hover:bg-[#ccc9ff] ease-in transition-all duration-300 hover:text-[#3329e0]">
-            Transform Your Home with Just a Click
+            Let's go !
           </button>
+
+
         </div>
-        <img className="w-full md:w-1/2 my-6 md:my-0 border border-red-500" data-aos="fade-left"
-          src="https://d33wubrfki0l68.cloudfront.net/4cec7c4fd345338b402158d5d6a717073e95a6d1/ec0f9/static/edit-content-5ac4e21e23781829b5fd741cdda90e12.png"
-          alt="" />
+        <div>
+
+          <video src={vid1} width="600" height="300" controls="controls" autoplay="true" loop="true" muted="true" className='rounded-lg' />
+        </div>
+
       </div>
 
 
 
-      <div className="container w-full mt-20 p-10 mx-auto">
-        <div className="text text-center font-nun text-2xl md:text-4xl mb-10">
-          <h1>How it works</h1>
-        </div>
-        <div className="box grid gap-3 w-fullc grid-cols-1 sm:grid-cols-2 justify-items-center lg:grid-cols-3">
-          <div className="card text-center p-3 md:p-6 font-nun" data-aos="flip-left"
-            data-aos-easing="ease-out-cubic"
-            data-aos-duration="2000">
-            <div className="img mb-12">
-              <img
-                src="https://d33wubrfki0l68.cloudfront.net/2890a57d9e62a6b846d599617580e069c5f0a12f/d9a0c/static/first-step-59eb3eb212e332919543c02ec939ded9.png"
-                alt="" />
-            </div>
-            <h2 className="my-4 text-xl font-medium">
-              Build from scratch or select prebuilt tailwind templates
-            </h2>
-            <p className="text-md font-light p-5">
-              Choose from a directory of 350+ tailwind css templates. These
-              tailwind css blocks were professionally crafted to fit different
-              needs ranging from landing, saas, portfolio, about us, contact us
-              etc. and are constantly being updated with new website templates
-            </p>
-          </div>
-          <div className="card text-center p-3 md:p-6 font-nun" data-aos="flip-left"
-            data-aos-easing="ease-out-cubic"
-            data-aos-duration="2000">
-            <div className="img mb-12">
-              <img
-                src="https://d33wubrfki0l68.cloudfront.net/c2e82d8575c1533514fe4e3e635a0e04326a360b/f1fa0/static/second-step-3328b46379b42647634e0f3175a6acc4.png"
-                alt="" />
-            </div>
-            <h2 className="my-4 text-xl font-medium">
-              Create or Customize the designs with numerous options
-            </h2>
-            <p className="text-md font-light p-5">
-              Easily customize your selected tailwind css template or create your
-              own design to fit your needs using our visual editor by either using
-              tailwind css classes or the numerous edit options and features of
-              the tailwind builder like cloning, undoing, deleting elments.
-            </p>
-          </div>
-          <div className="card text-center p-3 md:p-6 font-nun" data-aos="flip-left"
-            data-aos-easing="ease-out-cubic"
-            data-aos-duration="2000">
-            <div className="img mb-10">
-              <img
-                src="https://d33wubrfki0l68.cloudfront.net/1f3af8c639846d239df57652df0cc14cacbfec4b/bb3a5/static/third-step-9c6d5dda0aabdaf5582da388a1c4a673.png"
-                alt="" />
-            </div>
-            <h2 className="my-4 text-xl font-medium">
-              Preview designs, save and export code
-            </h2>
-            <p className="text-md font-light p-5">
-              Preview your designs in the tailwind builder to see how they render
-              on a webpage and save them easily when you are done. You can come
-              back when you wish to continue working on it or export the code from
-              your designs to use elsewhere or host on your own server
-            </p>
-          </div>
-        </div>
-      </div>
+
+
+
 
       <section
         className="container flex flex-col-reverse md:flex-row justify-center items-center w-full my-12 mx-auto font-nun p-8">
-        <img className="w-full md:w-1/2 my-6 md:my-0" data-aos="zoom-in-right"
-          src="https://d33wubrfki0l68.cloudfront.net/3440b6f4c5f14a4d9fd73188abe0650fb48e3c3a/0ce39/static/adone-c515f91e68f94712b82e62360814b06b.png"
-          alt="" />
+        <div className=''>
+          <div className='grid grid-cols-2 gap-5 mr-10 '>
+            <img src={img1} alt="" className="w-60  rounded-lg" />
+            <img src={img5} alt="" className="w-60  rounded-lg" />
+            <img src={img6} alt="" className="w-60  rounded-lg" />
+            <img src={img4} alt="" className="w-60  rounded-lg" />
+          </div>
+        </div>
         <div className="left w-full md:w-1/2 text-left md:text-left" data-aos="zoom-in-left">
           <h1 className="text-3xl md:text-4xl font-extrabold text-[#3329e0]">
-            Create components, prototypes, websites and templates for projects 10x
-            faster
+            Tired of going through countless colors to match your home ?
           </h1>
           <p className="my-6">
-            Easily create components or blocks that you can integrate with
-            existing projects in seconds or create full websites and templates
-            with very minimal effort and time
+            Easily find the perfect color for your home with our AI powered color recommending system. Get the most accurate color recommendations for your home based on the furniture and other objects in your room.
           </p>
           <button className="bg-[#3329e0] hover:bg-[#ccc9ff] ease-in transition-all duration-300 hover:text-[#3329e0] shadow-lg text-white px-8 py-4 rounded-full mt-4">
-            Create a website
+            Give me some shades !
           </button>
         </div>
       </section>
@@ -134,18 +92,14 @@ export default function Home() {
         className="container flex flex-col-reverse md:flex-row justify-center items-center w-full my-12 mx-auto font-nun p-8" data-aos="zoom-in-up">
         <div className="left w-full md:w-1/2 text-left md:text-left">
           <h1 className="text-3xl md:text-4xl font-extrabold text-[#3329e0]">
-            Save countless hours of coding and designing using our intuitive 350+
-            templates
+            Save countless hours of decorating your home 
           </h1>
           <p className="my-6">
-            Windframe features a large collection of beautiful already built
-            templates made with tailwind css which are regularly updated with new
-            templates.
+            Smart Decor features a wide range of home decor products that you can easily add to your home. 
+            It provides you with a 3d model of your own room with the products you choose. So you can renovate your house without even getting up from your seat.
           </p>
           <p className="my-6">
-            You can easily edit these templates in the tailwind builder / editor
-            to create any type of webpage and save countless hours redesigning
-            from scratch
+            You can easily edit these furniture models and add them to your room. You can also change the color of the furniture to match your room. And with out AI powered color recommendation system, you can easily find the perfect color for your furniture.
           </p>
         </div>
         <img className="w-full md:w-1/2 my-6 md:my-0"

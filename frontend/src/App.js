@@ -17,10 +17,11 @@ function App() {
           <Route path='/' element={<Home />} />
 
           <Route path="*" element={<ErrorPage />}></Route>
-          <>
-    {/* <Route path="/upload" element={<UploadImage />} /> */}
-    <Three1/>
-    </>
+          <Route path="/three1" element={<Three1 />} />
+
+          <Route path="/upload" element={<UploadImage />} />
+
+
         </Routes>
       </div>
 
