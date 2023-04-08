@@ -2,9 +2,21 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 from datetime import datetime
+import urllib.request
 
 def readImage(img_name):
-    img = cv2.imread('./public/images/' + img_name)
+    # img = cv2.imread('./public/images/' + img_name)
+
+    def url_to_image(url):
+	# download the image, convert it to a NumPy array, and then read
+	# it into OpenCV format
+	    resp = urllib.request.urlopen(url)
+	    image = np.asarray(bytearray(resp.read()), dtype="uint8")
+	    image = cv2.imdecode(image, cv2.IMREAD_COLOR)
+	# return the image
+	    return image
+    img = url_to_image( "https://firebasestorage.googleapis.com/v0/b/codeshastra-tech-turtles.appspot.com/o/files%2Falvindom_Shutterstock-1024x454.jpg?alt=media&token=981e1fe5-76b0-4054-8630-88119d2f1e67")
+
     return cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
 
@@ -40,7 +52,7 @@ def resizeAndPad(img, size, pad_color=0):
         pad_left, pad_right, pad_top, pad_bot = 0, 0, 0, 0
 
     # set pad color
-    if len(img.shape) is 3 and not isinstance(pad_color, (list, tuple, np.ndarray)): # color image but only one color provided
+    if len(img.shape) == 3 and not isinstance(pad_color, (list, tuple, np.ndarray)): # color image but only one color provided
         pad_color = [pad_color]*3
 
     # scale and pad
@@ -100,6 +112,7 @@ def mergeImages(img, colored_image, wall):
 
 def saveImage(img_name, img):
     img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+    # print(type(img))
     cv2.imwrite( "./public/edited/" + img_name, img)
 
 
@@ -136,7 +149,7 @@ def changeColor(image_name, position, new_color, pattern_image):
     
 
 
-# changeColor('img3.jpg', (300, 100), [105, 149, 173], None)
+changeColor('img3.jpg', (300, 100), [255, 100, 100], None)
 # changeColor('img3.jpg', (300, 100), None, 'pattern3.jpg')
 
 # PINK: 220, 180, 170

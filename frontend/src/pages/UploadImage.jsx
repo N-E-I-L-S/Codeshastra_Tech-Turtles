@@ -20,22 +20,30 @@ function UploadImage() {
         }
     };
 
-    function sendtoml(){
-        function PostRequest (){
-        fetch('' 
-        ,{
-        method : 'POST',
-        mode : 'cors',
-         body :JSON.stringify({
-              color: color,
-              url : imgUrl
-         }),
-        headers : {
-         'Content-type' : 'application/json' 
-         }})}
-         console.log(color)
-         console.log(imgUrl)
-         PostRequest()
+    function sendtoml() {
+        function PostRequest() {
+            fetch('http://127.0.0.1:8000/predict', {
+                method: 'POST',
+                body: JSON.stringify(
+                    {color: color,
+                    url: imgUrl}
+                ),
+                headers:{
+                  'Content-Type': 'application/json'
+                }
+              })
+              .then(response => response.json())
+              .then(data => {
+                console.log('Output:', data.output);
+              })
+              .catch(error => {
+                console.error('Error:', error);
+              });
+        }
+
+        console.log(color)
+        console.log(imgUrl)
+        PostRequest()
     }
 
     const handleSubmit = (e) => {
@@ -59,7 +67,6 @@ function UploadImage() {
             () => {
                 getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
                     setImgUrl(downloadURL)
-                    sendtoml()
                 });
             }
         );
@@ -71,7 +78,7 @@ function UploadImage() {
         <div className="uploadImage">
             <form onSubmit={handleSubmit} className='uploadImage-form'>
                 <input type='file' />
-                
+
                 {/* <SketchPicker
                     width={200}
                     height={200}
@@ -87,16 +94,20 @@ function UploadImage() {
                 <button type='submit'>Upload</button>
             </form>
             {hidden && (
-                    <SketchPicker
-                        styles={pickerStyle}
-                        color={color}
-                        onChange={(updatedColor) => setColor(updatedColor.hex)}
-                    />
-                )}
+                <SketchPicker
+                    styles={pickerStyle}
+                    color={color}
+                    onChange={(updatedColor) => {
+                        setColor(updatedColor.hex)
+                        setTimeout(sendtoml, 3000)
+                        // sendtoml()
+                    }}
+                />
+            )}
 
-                <button type="none" onClick={() => setHidden(!hidden)}>
-                    {hidden ? "Close Color Picker" : "Open Color Picker"}
-                </button>
+            <button type="none" onClick={() => setHidden(!hidden)}>
+                {hidden ? "Close Color Picker" : "Open Color Picker"}
+            </button>
             {
                 !imgUrl &&
                 <div className='uploadImage-outerbar'>
@@ -107,6 +118,12 @@ function UploadImage() {
                 imgUrl &&
                 <div className='uploadImage-outerbar'>
                     <img src={imgUrl} alt='uploaded file' height={200} />
+                </div>
+            }
+            {
+
+                <div className="processedimg">
+
                 </div>
             }
         </div>
