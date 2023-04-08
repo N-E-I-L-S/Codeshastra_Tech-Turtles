@@ -4,7 +4,7 @@ import Obj1 from "../components/Obj1.jsx";
 import Obj2 from "../components/Obj2.jsx";
 import { OrthographicCamera, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
-import Floor from "../components/Floor.jsx";
+// import Floor from "../components/Floor.jsx";
 import Room from "../components/Room.jsx";
 
 export default function Three1() {
@@ -12,7 +12,7 @@ export default function Three1() {
   const floorPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
 
   return (
-    <Canvas style={{ background: "white", height : '100vh' }} shadows dpr={[1, 2]}>
+    <Canvas style={{ background: "white", height : '50vh', width : '33vw', marginTop : '33vh'}} shadows dpr={[1, 2]}>
       <ambientLight intensity={0.5} />
       <directionalLight
         intensity={0.5}

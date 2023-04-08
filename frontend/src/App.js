@@ -4,8 +4,9 @@ import Three1 from "./pages/Three1";
 function App() {
   return (
     <>
-    {/* <UploadImage/> */}
-    <Three1/>
+    <UploadImage/>
+
+    {/* <Three1/> */}
     </>
   );
 }

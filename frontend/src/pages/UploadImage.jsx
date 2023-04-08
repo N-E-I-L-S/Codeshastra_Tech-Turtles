@@ -7,7 +7,7 @@ import './UploadImage.css'
 function UploadImage() {
     const [imgUrl, setImgUrl] = useState(null);
     const [progresspercent, setProgresspercent] = useState(0);
-
+    const [path, setPath] = useState(null)
     const [color, setColor] = useState("lightblue");
     const [hidden, setHidden] = useState(false);
     const pickerStyle = {
@@ -24,21 +24,29 @@ function UploadImage() {
         function PostRequest() {
             fetch('http://127.0.0.1:8000/predict', {
                 method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Methods': 'POST',
+                    'Access-Control-Allow-Headers': 'Content-Type',
+                    "Access-Control-Allow-Origin" : 'http://127.0.0.1:8000/predict'
+                },
                 body: JSON.stringify(
-                    {color: color,
-                    url: imgUrl}
+                    {
+                        color: color,
+                        url: imgUrl
+                    }
                 ),
-                headers:{
-                  'Content-Type': 'application/json'
-                }
-              })
-              .then(response => response.json())
-              .then(data => {
-                console.log('Output:', data.output);
-              })
-              .catch(error => {
-                console.error('Error:', error);
-              });
+                mode: 'cors',
+            })
+                .then(response => response.json())
+                .then(data => {
+                    setPath(data.output)
+                    console.log('Output:', data.output);
+                    setPath('../../../backend/uc_hack_20-master/uc_hack_20-master/public/edited/image44.jpg')
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
         }
 
         console.log(color)
@@ -121,11 +129,13 @@ function UploadImage() {
                 </div>
             }
             {
-
+                path?
                 <div className="processedimg">
-
-                </div>
+                    <img src={path} alt="Processed Image" />
+                </div>:
+                null
             }
+
         </div>
     );
 }
