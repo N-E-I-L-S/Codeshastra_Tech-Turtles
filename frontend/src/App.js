@@ -3,6 +3,7 @@ import ErrorPage from "./pages/ErrorPage";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import UploadImage from "./pages/UploadImage";
+import Three1 from "./pages/Three1";
 
 function App() {
 
@@ -16,7 +17,10 @@ function App() {
           <Route path='/' element={<Home />} />
 
           <Route path="*" element={<ErrorPage />}></Route>
-          <Route path="/upload" element={<UploadImage />} />
+          <>
+    {/* <Route path="/upload" element={<UploadImage />} /> */}
+    <Three1/>
+    </>
         </Routes>
       </div>
 
