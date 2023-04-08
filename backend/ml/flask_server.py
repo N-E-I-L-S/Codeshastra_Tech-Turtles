@@ -32,7 +32,7 @@ def predict():
     
         return (red, green, blue)
 
-    changeColor(input_param1, (300, 100), [color.red, color.green, color.blue], None)
+    # changeColor(input_param1, (300, 100), [color.red, color.green, color.blue], None)
     
     # Create a JSON response with the output
     response = {

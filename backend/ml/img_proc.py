@@ -3,19 +3,30 @@ import numpy as np
 from matplotlib import pyplot as plt
 from datetime import datetime
 import urllib.request
+import os
+
+def save_image():
+# URL of the image
+    url = "https://firebasestorage.googleapis.com/v0/b/codeshastra-tech-turtles.appspot.com/o/files%2FWhatsApp%20Image%202022-09-09%20at%2010.48.30%20AM.jpeg?alt=media&token=ba6ac7a1-d4fe-4a1d-8794-ad00c5940576"
+
+# Read the image from the URL
+    with urllib.request.urlopen(url) as url_response:
+        img_array = np.asarray(bytearray(url_response.read()), dtype=np.uint8)
+        img = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
+
+# Save the image to your device
+    cv2.imwrite("saved_image.jpg", img)
 
 def readImage(img_name):
-    # img = cv2.imread('./public/images/' + img_name)
 
-    def url_to_image(url):
-	# download the image, convert it to a NumPy array, and then read
-	# it into OpenCV format
-	    resp = urllib.request.urlopen(url)
-	    image = np.asarray(bytearray(resp.read()), dtype="uint8")
-	    image = cv2.imdecode(image, cv2.IMREAD_COLOR)
-	# return the image
-	    return image
-    img = url_to_image( "https://firebasestorage.googleapis.com/v0/b/codeshastra-tech-turtles.appspot.com/o/files%2Falvindom_Shutterstock-1024x454.jpg?alt=media&token=981e1fe5-76b0-4054-8630-88119d2f1e67")
+    url= "https://firebasestorage.googleapis.com/v0/b/codeshastra-tech-turtles.appspot.com/o/files%2FWhatsApp%20Image%202022-09-09%20at%2010.48.30%20AM.jpeg?alt=media&token=ba6ac7a1-d4fe-4a1d-8794-ad00c5940576"
+
+    path_to_folder='./public/user_images'
+    image_name = os.path.join(path_to_folder, 'image.jpg')
+    urllib.request.urlretrieve(url, image_name)
+    cv2.imwrite(os.path.join(path_to_folder,image_name))
+
+    img = cv2.imread(path_to_folder + img_name)
 
     return cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
@@ -149,7 +160,7 @@ def changeColor(image_name, position, new_color, pattern_image):
     
 
 
-changeColor('img3.jpg', (300, 100), [255, 100, 100], None)
+changeColor('img3.jpg', (300, 100), [0, 100, 100], None)
 # changeColor('img3.jpg', (300, 100), None, 'pattern3.jpg')
 
 # PINK: 220, 180, 170
