@@ -1,8 +1,12 @@
 import UploadImage from "./pages/UploadImage";
+import Three1 from "./pages/Three1";
 
 function App() {
   return (
-    <UploadImage/>
+    <>
+    {/* <UploadImage/> */}
+    <Three1/>
+    </>
   );
 }
 
