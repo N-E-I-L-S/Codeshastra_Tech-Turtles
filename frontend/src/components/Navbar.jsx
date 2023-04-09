@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
     return (
-        <nav className="flex justify-between items-center md:p-2 p-2 sticky top-0 w-full backdrop-blur-md z-10 mb-20">
+        <nav className="flex justify-between items-center md:p-2 p-2 sticky top-0 w-full backdrop-blur-md z-10 ">
             <div className="left flex flex-row items-center">
                 <div className="logo w-10 mr-5 flex">
                     <img
@@ -18,12 +18,10 @@ const Navbar = () => {
                             <NavLink className="mx-3 hover:text-[#3329e0] duration-300" to="/">Home</NavLink>
                         </li>
                         <li>
-                            <NavLink className="mx-3 hover:text-[#3329e0] duration-300" to="/upload">Upload</NavLink>
+                            <NavLink className="mx-3 hover:text-[#3329e0] duration-300" to="/upload">V-Paint</NavLink>
                         </li>
                         
-                        <li>
-                            <NavLink className="mx-3 hover:text-[#3329e0] duration-300" to="/recommend">Get Recommendations</NavLink>
-                        </li>
+                        
                         <li>
                             <NavLink className="mx-3 hover:text-[#3329e0] duration-300" to="/virtualhouse">Virtual Room</NavLink>
                         </li>

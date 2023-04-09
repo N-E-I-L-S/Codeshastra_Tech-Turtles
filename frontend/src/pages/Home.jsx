@@ -1,22 +1,11 @@
 import React from 'react'
-import Navbar from '../components/Navbar';
-import mySvg from '../assets/blurry-gradient-haikei.svg';
-import myImg from '../assets/bg_img.jpg';
-import WaveSvg from '../assets/wave.svg';
 import img1 from '../assets/img1.jpg'
-import img2 from '../assets/img2.jpg'
-import img3 from '../assets/img3.jpg'
 import img4 from '../assets/img4.jpg'
 import img5 from '../assets/img5.jpg'
 import img6 from '../assets/img6.jpg'
-import img7 from '../assets/img7.jpg'
-import img8 from '../assets/img8.jpg'
-import img9 from '../assets/img9.jpg'
-import img10 from '../assets/img10.jpg'
-import bgimg from '../assets/bg.svg'
+
 import vid1 from '../assets/hame_page_vid.mp4'
 import vid2 from '../assets/screen_capture.webm'
-import Three1 from './Three1';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
@@ -24,7 +13,7 @@ export default function Home() {
     <>
 
 
-      <div className="container p-8 mx-auto text-center ">
+      <div className="container p-8 mx-auto text-center mt-12 mb-12">
         <div className="text-area font-nun font-black text-[#3329e0]">
           <h2 className="text-3xl md:text-5xl pb-5">
             Unleash Your Creativity and See Your Vision Come to Life
@@ -81,7 +70,7 @@ export default function Home() {
           <p className="my-6">
             Easily find the perfect color for your home with our AI powered color recommending system. Get the most accurate color recommendations for your home based on the furniture and other objects in your room.
           </p>
-          <Link to={"./recommend"} className="bg-[#3329e0] shadow-lg text-white px-8 py-4 rounded-full mt-12 hover:bg-[#ccc9ff] ease-in transition-all duration-300 hover:text-[#3329e0]">
+          <Link to={"./upload"} className="bg-[#3329e0] shadow-lg text-white px-8 py-4 rounded-full mt-12 hover:bg-[#ccc9ff] ease-in transition-all duration-300 hover:text-[#3329e0]">
             Let's go !
           </Link>
         </div>
