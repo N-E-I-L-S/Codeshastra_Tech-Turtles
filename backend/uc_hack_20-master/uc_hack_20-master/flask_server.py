@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
+# from colorpredictor import predict
 from img_proc import changeColor
 
 app = Flask(__name__)
@@ -42,6 +43,15 @@ def predict():
 
     # Create a JSON response with the output
     return jsonify({'result': 'success'})
+
+# @app.route('/colorpredict', methods=['POST'])
+# @cross_origin(support_credentials= True)
+# def color_predict():
+#     data = request.get_json()
+#     print(data)
+#     input_param1 = data['url']
+#     changeColor('image44.jpg',(300, 100), predict(), None, input_param1)
+#     return jsonify({'result': 'success'})
 
 if __name__ == '__main__':
     app.run(debug=True, port=8000)

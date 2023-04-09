@@ -48,18 +48,6 @@ function UploadImage() {
                 });
         }
 
-        // axios.post('http://localhost:8000/predict', JSON.stringify(            {
-        //         color: color,
-        //         url: imgUrl
-        //     }))
-        //     .then(response => {
-        //         console.log('Output:', response.data.output);
-        //     })
-        //     .catch(error => {
-        //         console.error('Error:', error);
-        //     });
-
-
         console.log(color)
         console.log(imgUrl)
         PostRequest()
@@ -92,8 +80,6 @@ function UploadImage() {
         );
     }
 
-
-
     return (
         <>
             <div className="flex w-screen p-2 h-screen justify-evenly">
@@ -112,8 +98,8 @@ function UploadImage() {
                                 </div>
                             }
                             <button type='submit' className=' p-3 mt-4 mb-3 mx-auto btn bg-primary rounded-lg shadow-lg'>Upload</button>
-                            <a href="#" className="text-blue-600 mx-5">Reset Image</a>
                         </form>
+                            <button type="submit" className="text-blue-600 mx-5">Reset Image</button>
 
                     </div>
 
@@ -148,13 +134,6 @@ function UploadImage() {
             </div >
 
             <div className="uploadImage">
-
-
-
-
-
-
-
                 {hidden && (
                     <SketchPicker
                         styles={pickerStyle}
@@ -166,12 +145,6 @@ function UploadImage() {
                         }}
                     />
                 )}
-
-
-
-
-
-
             </div>
         </>
     );
