@@ -2,7 +2,7 @@ import { useState } from "react";
 import { storage } from '../firebase/firebase_config';
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { SketchPicker, ChromePicker } from 'react-color'
-import './UploadImage.css'
+// import './UploadImage.css'
 import image44 from "./image44.jpg"
 function UploadImage() {
     const [imgUrl, setImgUrl] = useState(null);
