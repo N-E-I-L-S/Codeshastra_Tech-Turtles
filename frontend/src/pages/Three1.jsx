@@ -12,7 +12,8 @@ export default function Three1() {
   const floorPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
 
   return (
-    <Canvas style={{ background: "white", height : '50vh', width : '33vw', marginTop : '33vh'}} shadows dpr={[1, 2]}>
+    
+      <Canvas style={{ background: "white", height : '100%' }} shadows dpr={[1, 2]}>
       <ambientLight intensity={0.5} />
       <directionalLight
         intensity={0.5}
@@ -44,5 +45,6 @@ export default function Three1() {
 
       <OrbitControls minZoom={10} maxZoom={50} enabled={!isDragging} />
     </Canvas>
+    
   );
 }
