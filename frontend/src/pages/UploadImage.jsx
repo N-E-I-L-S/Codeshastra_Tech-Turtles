@@ -3,7 +3,7 @@ import { storage } from '../firebase/firebase_config';
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { SketchPicker, ChromePicker } from 'react-color'
 import './UploadImage.css'
-
+import image44 from "./image44.jpg"
 function UploadImage() {
     const [imgUrl, setImgUrl] = useState(null);
     const [progresspercent, setProgresspercent] = useState(0);
@@ -25,10 +25,9 @@ function UploadImage() {
             fetch('http://127.0.0.1:8000/predict', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json; charset=UTF-8',
                     'Access-Control-Allow-Methods': 'POST',
-                    'Access-Control-Allow-Headers': 'Content-Type',
-                    "Access-Control-Allow-Origin" : 'http://127.0.0.1:8000/predict'
+                    // 'Access-Control-Allow-Headers': 'Content-Type',
                 },
                 body: JSON.stringify(
                     {
@@ -40,14 +39,26 @@ function UploadImage() {
             })
                 .then(response => response.json())
                 .then(data => {
-                    setPath(data.output)
-                    console.log('Output:', data.output);
+                    setPath(data.result)
+                    console.log('Output:', data.result);
                     setPath('../../../backend/uc_hack_20-master/uc_hack_20-master/public/edited/image44.jpg')
                 })
                 .catch(error => {
                     console.error('Error:', error);
                 });
         }
+
+        // axios.post('http://localhost:8000/predict', JSON.stringify(            {
+        //         color: color,
+        //         url: imgUrl
+        //     }))
+        //     .then(response => {
+        //         console.log('Output:', response.data.output);
+        //     })
+        //     .catch(error => {
+        //         console.error('Error:', error);
+        //     });
+
 
         console.log(color)
         console.log(imgUrl)
@@ -75,6 +86,7 @@ function UploadImage() {
             () => {
                 getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
                     setImgUrl(downloadURL)
+                    sendtoml()
                 });
             }
         );
@@ -107,7 +119,7 @@ function UploadImage() {
                     color={color}
                     onChange={(updatedColor) => {
                         setColor(updatedColor.hex)
-                        setTimeout(sendtoml, 3000)
+                        // setTimeout(sendtoml, 3000)
                         // sendtoml()
                     }}
                 />
@@ -129,11 +141,12 @@ function UploadImage() {
                 </div>
             }
             {
-                path?
-                <div className="processedimg">
-                    <img src={path} alt="Processed Image" />
-                </div>:
-                null
+                path ?
+                    <div className="processedimg">
+                        {console.log(path)}
+                        <img style={{height : '30vh', width : '100%' }} src={image44} alt="Processed Image" />
+                    </div> :
+                    null
             }
 
         </div>

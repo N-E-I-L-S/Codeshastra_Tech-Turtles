@@ -121,7 +121,8 @@ def mergeImages(img, colored_image, wall):
 
 def saveImage(img_name, img):
     img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
-    cv2.imwrite( "./public/edited/" + img_name, img)
+    # cv2.imwrite( "./public/edited/" + img_name, img)
+    cv2.imwrite( "../../../frontend/src/pages/" + img_name, img)
 
 
 def showImages(original_img, colored_image, selected_wall, final_img):
