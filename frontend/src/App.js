@@ -5,6 +5,9 @@ import Home from "./pages/Home";
 import UploadImage from "./pages/UploadImage";
 import Three1 from "./pages/Three1";
 import VirtualHouse from "./pages/VirtualHouse";
+import Visualize from "./pages/Visualize";
+import Inspire from "./pages/Inspire";
+import Recommend from "./pages/Recommend";
 
 function App() {
 
@@ -19,6 +22,9 @@ function App() {
 
           <Route path="*" element={<ErrorPage />}></Route>
           <Route path="/virtualhouse" element={<VirtualHouse />} />
+          <Route path="/visualize" element={<Visualize />} />
+          <Route path="/inspire" element={<Inspire />} />
+          <Route path="/recommend" element={<Recommend />} />
 
 
           <Route path="/upload" element={<UploadImage />} />

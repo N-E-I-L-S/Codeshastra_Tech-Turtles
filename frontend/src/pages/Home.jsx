@@ -13,9 +13,11 @@ import img7 from '../assets/img7.jpg'
 import img8 from '../assets/img8.jpg'
 import img9 from '../assets/img9.jpg'
 import img10 from '../assets/img10.jpg'
-
+import bgimg from '../assets/bg.svg'
 import vid1 from '../assets/hame_page_vid.mp4'
+import vid2 from '../assets/screen_capture.webm'
 import Three1 from './Three1';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -41,17 +43,17 @@ export default function Home() {
       <div
         className="container flex flex-col-reverse md:flex-row justify-center items-center w-full my-12 mx-auto font-nun p-8">
         <div className="left w-full md:w-1/2 text-center md:text-left" data-aos="fade-right">
-        <h1 className="text-3xl md:text-4xl font-extrabold text-[#3329e0]">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-[#3329e0]">
             Tired of going through countless colors to match your vibe ?
           </h1>
           <p className="my-6">
-          Try out and experiment with different colors and styles to see how they look on your home, without even lifting the brush.
+            Try out and experiment with different colors and styles to see how they look on your home, without even lifting the brush.
             Just upload a picture of your room and give us your favourite color,  our AI powered system will do the rest.
-            
+
           </p>
-          <button className="bg-[#3329e0] hover:bg-[#ccc9ff] ease-in transition-all duration-300 hover:text-[#3329e0] shadow-lg text-white px-8 py-4 rounded-full mt-4">
+          <Link to={"./upload"} className="bg-[#3329e0] hover:bg-[#ccc9ff] ease-in transition-all duration-300 hover:text-[#3329e0] shadow-lg text-white px-8 py-4 rounded-full mt-4">
             Give me some shades !
-          </button>
+          </Link>
 
 
         </div>
@@ -69,22 +71,22 @@ export default function Home() {
           <div className='grid grid-cols-2 gap-5 mr-10 '>
             <img src={img1} alt="" className="w-60  rounded-lg" />
             <img src={img5} alt="" className="w-60  rounded-lg" />
-            
+
           </div>
         </div>
         <div className="left w-full md:w-1/2 text-left md:text-left" data-aos="zoom-in-left">
-        <h1 className="text-3xl md:text-4xl font-extrabold text-[#3329e0]">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-[#3329e0]">
             Confused about what color to choose for your home ? <br /> We got you covered !
           </h1>
           <p className="my-6">
-          Easily find the perfect color for your home with our AI powered color recommending system. Get the most accurate color recommendations for your home based on the furniture and other objects in your room.
+            Easily find the perfect color for your home with our AI powered color recommending system. Get the most accurate color recommendations for your home based on the furniture and other objects in your room.
           </p>
-          <button className="bg-[#3329e0] shadow-lg text-white px-8 py-4 rounded-full mt-12 hover:bg-[#ccc9ff] ease-in transition-all duration-300 hover:text-[#3329e0]">
+          <Link to={"./recommend"} className="bg-[#3329e0] shadow-lg text-white px-8 py-4 rounded-full mt-12 hover:bg-[#ccc9ff] ease-in transition-all duration-300 hover:text-[#3329e0]">
             Let's go !
-          </button>
+          </Link>
         </div>
       </section>
-      
+
       <section
         className="container flex flex-col-reverse md:flex-row justify-center items-center w-full my-12 mx-auto font-nun p-8" data-aos="zoom-in-up">
         <div className="left w-full md:w-1/2 text-left md:text-left">
@@ -98,17 +100,24 @@ export default function Home() {
           <p className="my-6">
             You can easily edit these furniture models and add them to your room. You can also change the color of the furniture to match your room. And with out AI powered color recommendation system, you can easily find the perfect color for your furniture.
           </p>
+          <Link to={"./virtualhouse"} className="bg-[#3329e0] shadow-lg text-white px-8 py-4 rounded-full mt-12 hover:bg-[#ccc9ff] ease-in transition-all duration-300 hover:text-[#3329e0]">
+            Let's go !
+          </Link>
         </div>
-       
+        <div>
+
+          <video src={vid2} width="600" height="300" controls="controls" autoplay="true" loop="true" muted="true" className='rounded-lg' />
+        </div>
+
       </section>
-      
-      
-      
+
+
+
       {/* <div className='w-screen border border-red-800 h-screen'>
           <Three1 />
         </div> */}
-        
-        <section
+
+      <section
         className="container flex flex-col-reverse md:flex-row justify-center items-center w-full my-20 mx-auto font-nun p-8">
         <div className=''>
           <div className='grid grid-cols-2 gap-5 mr-10 '>
@@ -123,36 +132,36 @@ export default function Home() {
             Want to take your creativity to the next level ?
           </h1>
           <p className="my-6">
-            Just tell us what your dream room will look like and our AI will give you the most accurate visualisation of you imagination. 
+            Just tell us what your dream room will look like and our AI will give you the most accurate visualisation of you imagination.
             <span>Imagination is the only limit !</span>
           </p>
-          <button className="bg-[#3329e0] hover:bg-[#ccc9ff] ease-in transition-all duration-300 hover:text-[#3329e0] shadow-lg text-white px-8 py-4 rounded-full mt-4">
+          <Link to={"./visualize"} className="bg-[#3329e0] hover:bg-[#ccc9ff] ease-in transition-all duration-300 hover:text-[#3329e0] shadow-lg text-white px-8 py-4 rounded-full mt-4">
             Hell Yes !
-          </button>
+          </Link>
         </div>
       </section>
-        
-        
+
+
       <section
         className="container flex flex-col-reverse md:flex-row justify-center items-center w-full my-12 mx-auto font-nun p-8">
-        <img className="w-full md:w-1/2 my-6 md:my-0" data-aos="zoom-in-right"
+        <img className="w-full md:w-1/2 my-6  m-10" data-aos="zoom-in-right"
           src="https://d33wubrfki0l68.cloudfront.net/19abff473651bcdc6c8816417e25e85d8a422919/7d3c2/static/ateam-849d02d29daff50ad627f56dd22a6d32.png"
           alt="" />
-        <div className="left w-full md:w-1/2 text-left md:text-left" data-aos="zoom-in-left">
+        <div className="left w-full md:w-1/2 text-left md:text-left mr-10" data-aos="zoom-in-left">
           <h1 className="text-3xl md:text-4xl font-extrabold text-[#3329e0]">
-            Check out what cool paints you friends are using and never miss the trend.
+            Share your creativity with the world !.
           </h1>
           <p className="my-6">
-            Add your friends in your network and see what colors they are using in their rooms and get inspired by them.
+            Add your friends in your network and see what colors they vibe with in their rooms and get inspired.
           </p>
-          <button className="bg-[#3329e0] hover:bg-[#ccc9ff] ease-in transition-all duration-300 hover:text-[#3329e0] shadow-lg text-white px-8 py-4 rounded-full mt-4">
+          <Link to={"./inspire"} className="bg-[#3329e0] hover:bg-[#ccc9ff] ease-in transition-all duration-300 hover:text-[#3329e0] shadow-lg text-white px-8 py-4 rounded-full mt-6">
             Inspire Me !
-          </button>
+          </Link>
         </div>
       </section>
 
 
-      <section className="fotter p-3 md:p-8 mt-6">
+      <section id='contact' className="fotter p-3 md:p-8 mt-6">
 
         <div className="flex flex-col md:flex-row items-center mx-auto md:mx-0 justify-between w-full p-4 ">
           <div className="dev font-nun w-full md:w-1/2 mt-12 md:mt-0">
@@ -173,11 +182,21 @@ export default function Home() {
           </div>
           <div className="help-legal my-2 md:my-8 flex flex-row justify-between w-full xl:w-1/2 mx-auto  p-2 md:p-10 md:pr-2 mt-12">
             <div className="mr-4 md:mr-8">
-              <h2 className="font-bold my-3">Smart Decor</h2>
+              <h2 className="font-bold my-3">Contact us</h2>
               <ul>
 
+                
                 <li className="my-4 hover:text-blue-700 transition-all ease-in duration-300">
-                  <a href="#">Contact us</a>
+                  <a href="mailto:shantanuesakpal1420@gmail.com">Shantanu Sakpal</a>
+                </li>
+                <li className="my-4 hover:text-blue-700 transition-all ease-in duration-300">
+                  <a href="mailto:someone@example.com">Stavan Shah</a>
+                </li>
+                <li className="my-4 hover:text-blue-700 transition-all ease-in duration-300">
+                  <a href="mailto:someone@example.com">Neil Shukla</a>
+                </li>
+                <li className="my-4 hover:text-blue-700 transition-all ease-in duration-300">
+                  <a href="mailto:someone@example.com">Atharva Salian</a>
                 </li>
 
               </ul>
