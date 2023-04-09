@@ -3,7 +3,7 @@ import img1 from '../assets/img1.jpg'
 import img4 from '../assets/img4.jpg'
 import img5 from '../assets/img5.jpg'
 import img6 from '../assets/img6.jpg'
-
+import Hello from './Chatbot'
 import vid1 from '../assets/hame_page_vid.mp4'
 import vid2 from '../assets/screen_capture.webm'
 import { Link } from 'react-router-dom';
@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 export default function Home() {
   return (
     <>
-
 
       <div className="container p-8 mx-auto text-center mt-12 mb-12">
         <div className="text-area font-nun font-black text-[#3329e0]">
@@ -253,9 +252,6 @@ export default function Home() {
           </ul>
         </div>
       </section>
-
-
-
     </>
   )
 }
