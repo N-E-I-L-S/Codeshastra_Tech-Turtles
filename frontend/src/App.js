@@ -20,6 +20,7 @@ function App() {
           <Route path="*" element={<ErrorPage />}></Route>
           <Route path="/virtualhouse" element={<VirtualHouse />} />
 
+
           <Route path="/upload" element={<UploadImage />} />
 
 
