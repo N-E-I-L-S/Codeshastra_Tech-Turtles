@@ -131,7 +131,7 @@ function UploadImage() {
                 </div>
 
 
-            </div >
+            </div>
 
             <div className="uploadImage">
                 {hidden && (
