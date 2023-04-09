@@ -14,7 +14,7 @@ export default function Room(props) {
   const { nodes, materials } = useGLTF('/room-transformed.glb')
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Object_2.geometry} material={materials.lambert1} rotation={[-Math.PI / 2, 0, 0]} scale={0.05} />
+      <mesh geometry={nodes.Object_2.geometry} material={materials.lambert1} rotation={[-Math.PI / 2, 0, 0]} scale={0.05} color='white' />
     </group>
   )
 }

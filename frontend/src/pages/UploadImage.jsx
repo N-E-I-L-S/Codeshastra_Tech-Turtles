@@ -3,7 +3,7 @@ import { storage } from '../firebase/firebase_config';
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { SketchPicker, ChromePicker } from 'react-color'
 // import './UploadImage.css'
-import img1 from '../assets/img1.jpg'
+import image44 from "./image44.jpg"import img1 from '../assets/img1.jpg'
 import img2 from '../assets/img2.jpg'
 import img3 from '../assets/img3.jpg'
 import img4 from '../assets/img4.jpg'
@@ -18,7 +18,7 @@ const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
 function UploadImage() {
     const [imgUrl, setImgUrl] = useState(null);
     const [progresspercent, setProgresspercent] = useState(0);
-
+    const [path, setPath] = useState(null)
     const [color, setColor] = useState("lightblue");
     const [hidden, setHidden] = useState(false);
     const pickerStyle = {
@@ -35,24 +35,41 @@ function UploadImage() {
         function PostRequest() {
             fetch('http://127.0.0.1:8000/predict', {
                 method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json; charset=UTF-8',
+                    'Access-Control-Allow-Methods': 'POST',
+                    // 'Access-Control-Allow-Headers': 'Content-Type',
+                },
                 body: JSON.stringify(
                     {
                         color: color,
                         url: imgUrl
                     }
                 ),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
+                mode: 'cors',
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log('Output:', data.output);
+                    setPath(data.result)
+                    console.log('Output:', data.result);
+                    setPath('../../../backend/uc_hack_20-master/uc_hack_20-master/public/edited/image44.jpg')
                 })
                 .catch(error => {
                     console.error('Error:', error);
                 });
         }
+
+        // axios.post('http://localhost:8000/predict', JSON.stringify(            {
+        //         color: color,
+        //         url: imgUrl
+        //     }))
+        //     .then(response => {
+        //         console.log('Output:', response.data.output);
+        //     })
+        //     .catch(error => {
+        //         console.error('Error:', error);
+        //     });
+
 
         console.log(color)
         console.log(imgUrl)
@@ -80,6 +97,7 @@ function UploadImage() {
             () => {
                 getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
                     setImgUrl(downloadURL)
+                    sendtoml()
                 });
             }
         );
@@ -132,44 +150,57 @@ function UploadImage() {
                     </div>
 
 
-                    <button className="btn btn-primary bg-primary text-black p-3 rounded-lg shadow-md" type='submit'>Upload</button>
-                </form>
-                {
-                    imgUrl &&
-                    <div className='uploadImage-outerbar'>
-                        <img src={imgUrl} alt='uploaded file' height={200} />
-                    </div>
-                }
-                {hidden && (
-                    <SketchPicker
-                        styles={pickerStyle}
-                        color={color}
-                        onChange={(updatedColor) => {
-                            setColor(updatedColor.hex)
-                            setTimeout(sendtoml, 3000)
-                            // sendtoml()
-                        }}
-                    />
-                )}
+                {/* <SketchPicker
+                    width={200}
+                    height={200}
+                    color="#ff0000"
+                    onChange={(color) => console.log(color)}
+                    onChangeComplete={(color, event) => console.log(color)}
+                />
+                <ChromePicker
+                    color="#ff0000"
+                    onChangeComplete={handleChangeComplete}
+                    disableAlpha={true}
+                /> */}
+                <button type='submit'>Upload</button>
+            </form>
+            {hidden && (
+                <SketchPicker
+                    styles={pickerStyle}
+                    color={color}
+                    onChange={(updatedColor) => {
+                        setColor(updatedColor.hex)
+                        // setTimeout(sendtoml, 3000)
+                        // sendtoml()
+                    }}
+                />
+            )}
 
-                <button type="none" onClick={() => setHidden(!hidden)}>
-                    {hidden ? "Close Color Picker" : "Open Color Picker"}
-                </button>
-                {
-                    !imgUrl &&
-                    <div className='uploadImage-outerbar'>
-                        <div className='uploadimage-innerbar' style={{ width: `${progresspercent}%` }}>{progresspercent}%</div>
-                    </div>
-                }
-
-                {
-
+            <button type="none" onClick={() => setHidden(!hidden)}>
+                {hidden ? "Close Color Picker" : "Open Color Picker"}
+            </button>
+            {
+                !imgUrl &&
+                <div className='uploadImage-outerbar'>
+                    <div className='uploadimage-innerbar' style={{ width: `${progresspercent}%` }}>{progresspercent}%</div>
+                </div>
+            }
+            {
+                imgUrl &&
+                <div className='uploadImage-outerbar'>
+                    <img src={imgUrl} alt='uploaded file' height={200} />
+                </div>
+            }
+            {
+                path ?
                     <div className="processedimg">
+                        {console.log(path)}
+                        <img style={{height : '30vh', width : '100%' }} src={image44} alt="Processed Image" />
+                    </div> :
+                    null
+            }
 
-                    </div>
-                }
-            </div>
-        </>
+        </div>
     );
 }
 export default UploadImage;

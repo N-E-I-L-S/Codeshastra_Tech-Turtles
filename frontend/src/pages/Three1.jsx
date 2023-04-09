@@ -4,7 +4,7 @@ import Obj1 from "../components/Obj1.jsx";
 import Obj2 from "../components/Obj2.jsx";
 import { OrthographicCamera, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
-import Floor from "../components/Floor.jsx";
+// import Floor from "../components/Floor.jsx";
 import Room from "../components/Room.jsx";
 
 export default function Three1() {
