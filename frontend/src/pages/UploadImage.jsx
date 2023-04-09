@@ -84,6 +84,7 @@ function UploadImage() {
         <>
             <div className="flex w-screen p-2 h-screen justify-evenly">
                 <div className="w-5/12 bg-blue-200 rounded-lg text-center p-10 "><h1 className=" font-bold text-2xl"> Upload Your image here</h1>
+                <p>Choose the color first, then simply upload the image !</p>
                     <div class="m-4 mx-auto w-96">
                         <form onSubmit={handleSubmit} className='uploadImage-form'>
 

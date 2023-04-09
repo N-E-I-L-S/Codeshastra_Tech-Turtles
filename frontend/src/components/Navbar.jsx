@@ -18,12 +18,15 @@ const Navbar = () => {
                             <NavLink className="mx-3 hover:text-[#3329e0] duration-300" to="/">Home</NavLink>
                         </li>
                         <li>
-                            <NavLink className="mx-3 hover:text-[#3329e0] duration-300" to="/upload">V-Paint</NavLink>
+                            <NavLink className="mx-3 hover:text-[#3329e0] duration-300" to="/upload">Paint A Wall</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className="mx-3 hover:text-[#3329e0] duration-300" to="/recommend">Help Me Choose</NavLink>
                         </li>
                         
                         
                         <li>
-                            <NavLink className="mx-3 hover:text-[#3329e0] duration-300" to="/virtualhouse">Virtual Room</NavLink>
+                            <NavLink className="mx-3 hover:text-[#3329e0] duration-300" to="/virtualhouse">Your Virtual Room</NavLink>
                         </li>
                         <li>
                             <NavLink className="mx-3 hover:text-[#3329e0] duration-300" to="/visualize">Visualize</NavLink>
