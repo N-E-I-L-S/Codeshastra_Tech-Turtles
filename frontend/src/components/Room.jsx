@@ -19,7 +19,7 @@ export default function Room(props) {
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Object_2.geometry} material={materials.lambert1} rotation={[-Math.PI / 2, 0, 0]} scale={0.05} >
-        <meshStandardMaterial attach="material" color="lightyellow" />
+        <meshStandardMaterial attach="material" color="red" />
       </mesh>
 
 
