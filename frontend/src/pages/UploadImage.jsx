@@ -4,6 +4,9 @@ import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { SketchPicker, ChromePicker } from 'react-color'
 // import './UploadImage.css'
 import image44 from "./image44.jpg"
+import image46 from './image46.jpg'
+
+
 function UploadImage() {
     const [imgUrl, setImgUrl] = useState(null);
     const [progresspercent, setProgresspercent] = useState(0);
@@ -19,6 +22,30 @@ function UploadImage() {
             }
         }
     };
+
+    function recommendColor(){
+        function PostRequest (){
+        fetch('http://127.0.0.1:8000/colorpredict',{
+        method : 'POST',
+        mode : 'cors',
+         body :JSON.stringify({
+                url: imgUrl
+         }),
+        headers : {
+         'Content-type' : 'application/json' 
+         }})
+         .then(response => response.json())
+                .then(data => {
+                    console.log('Output:', data.result);
+                    setPath('../../../backend/uc_hack_20-master/uc_hack_20-master/public/edited/image46.jpg')
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+         PostRequest()
+
+    }
 
     function sendtoml() {
         function PostRequest() {
@@ -39,7 +66,6 @@ function UploadImage() {
             })
                 .then(response => response.json())
                 .then(data => {
-                    setPath(data.result)
                     console.log('Output:', data.result);
                     setPath('../../../backend/uc_hack_20-master/uc_hack_20-master/public/edited/image44.jpg')
                 })
@@ -128,6 +154,7 @@ function UploadImage() {
             <button type="none" onClick={() => setHidden(!hidden)}>
                 {hidden ? "Close Color Picker" : "Open Color Picker"}
             </button>
+            <button onClick={()=>recommendColor()}>Recommend Color</button>
             {
                 !imgUrl &&
                 <div className='uploadImage-outerbar'>

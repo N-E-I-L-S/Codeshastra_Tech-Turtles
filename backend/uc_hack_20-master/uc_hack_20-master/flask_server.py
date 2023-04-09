@@ -43,5 +43,15 @@ def predict():
     # Create a JSON response with the output
     return jsonify({'result': 'success'})
 
+@app.route('/colorpredict', methods=['POST'])
+@cross_origin(support_credentials= True)
+def color_predict():
+    data = request.get_json()
+    print(data)
+    input_param1 = data['url']
+    changeColor('image44.jpg',(300, 100), [color[0], color[1], color[2]], None, input_param1)
+    
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=8000)
