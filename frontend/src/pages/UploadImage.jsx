@@ -2,19 +2,8 @@ import { useState } from "react";
 import { storage } from '../firebase/firebase_config';
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { SketchPicker, ChromePicker } from 'react-color'
-// import './UploadImage.css'
-import image44 from "./image44.jpg"import img1 from '../assets/img1.jpg'
-import img2 from '../assets/img2.jpg'
-import img3 from '../assets/img3.jpg'
-import img4 from '../assets/img4.jpg'
-import img5 from '../assets/img5.jpg'
-import img6 from '../assets/img6.jpg'
-import img7 from '../assets/img7.jpg'
-import img8 from '../assets/img8.jpg'
-import img9 from '../assets/img9.jpg'
-import img10 from '../assets/img10.jpg'
-const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
-
+import './UploadImage.css'
+import image44 from "./image44.jpg"
 function UploadImage() {
     const [imgUrl, setImgUrl] = useState(null);
     const [progresspercent, setProgresspercent] = useState(0);
@@ -105,50 +94,10 @@ function UploadImage() {
 
 
 
-
     return (
-        <>
-
-            <div className=" mx-auto w-11/12 border border-red rounded-lg ">
-                <h1>Select a Photo to Paint </h1>
-                <h5>Check out some demo images to try out our feature</h5>
-                <div className="flex flex-row justify-center">
-
-                    {
-                        images.map((image, index) => {
-
-                            return (
-                                <img src={{ image } + ".jpg"} alt="demo" height={200} />
-                            )
-                        })
-                    }
-
-                </div>
-
-
-
-
-
-
-
-
-            </div>
-
-
-            <div className="p-10">
-                <form onSubmit={handleSubmit} className=''>
-
-                    <div class="mb-3 w-96">
-                        <label
-                            for="formFile"
-                            class="mb-2 inline-block text-neutral-700 dark:text-neutral-600"
-                        >Chooose file to upload</label>
-                        <input
-                            class="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-[0_0_0_1px] focus:shadow-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-neutral-700 dark:file:text-neutral-100"
-                            type="file"
-                            id="formFile" />
-                    </div>
-
+        <div className="uploadImage">
+            <form onSubmit={handleSubmit} className='uploadImage-form'>
+                <input type='file' />
 
                 {/* <SketchPicker
                     width={200}
