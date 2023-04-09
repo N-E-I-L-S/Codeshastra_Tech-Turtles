@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import UploadImage from "./pages/UploadImage";
 import Three1 from "./pages/Three1";
+import VirtualHouse from "./pages/VirtualHouse";
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
           <Route path='/' element={<Home />} />
 
           <Route path="*" element={<ErrorPage />}></Route>
-          <Route path="/three1" element={<Three1 />} />
+          <Route path="/virtualhouse" element={<VirtualHouse />} />
 
           <Route path="/upload" element={<UploadImage />} />
 

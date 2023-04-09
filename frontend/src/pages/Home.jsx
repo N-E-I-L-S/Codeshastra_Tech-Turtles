@@ -15,6 +15,7 @@ import img9 from '../assets/img9.jpg'
 import img10 from '../assets/img10.jpg'
 
 import vid1 from '../assets/hame_page_vid.mp4'
+import Three1 from './Three1';
 
 export default function Home() {
   return (
@@ -40,15 +41,16 @@ export default function Home() {
       <div
         className="container flex flex-col-reverse md:flex-row justify-center items-center w-full my-12 mx-auto font-nun p-8">
         <div className="left w-full md:w-1/2 text-center md:text-left" data-aos="fade-right">
-          <h1 className="text-3xl md:text-4xl font-extrabold text-[#3329e0]">
-            A Fresh Coat of Paint, Without the Mess
+        <h1 className="text-3xl md:text-4xl font-extrabold text-[#3329e0]">
+            Tired of going through countless colors to match your vibe ?
           </h1>
           <p className="my-6">
-            Try out and experiment with different colors and styles to see how they look on your home.
-            Transform you home with just a click. Try out our best AI services.
+          Try out and experiment with different colors and styles to see how they look on your home, without even lifting the brush.
+            Just upload a picture of your room and give us your favourite color,  our AI powered system will do the rest.
+            
           </p>
-          <button className="bg-[#3329e0] shadow-lg text-white px-8 py-4 rounded-full mt-12 hover:bg-[#ccc9ff] ease-in transition-all duration-300 hover:text-[#3329e0]">
-            Let's go !
+          <button className="bg-[#3329e0] hover:bg-[#ccc9ff] ease-in transition-all duration-300 hover:text-[#3329e0] shadow-lg text-white px-8 py-4 rounded-full mt-4">
+            Give me some shades !
           </button>
 
 
@@ -61,13 +63,53 @@ export default function Home() {
       </div>
 
 
-
-
-
-
-
       <section
-        className="container flex flex-col-reverse md:flex-row justify-center items-center w-full my-12 mx-auto font-nun p-8">
+        className="container flex flex-col-reverse md:flex-row justify-center items-center w-full my-20 mx-auto font-nun p-8">
+        <div className=''>
+          <div className='grid grid-cols-2 gap-5 mr-10 '>
+            <img src={img1} alt="" className="w-60  rounded-lg" />
+            <img src={img5} alt="" className="w-60  rounded-lg" />
+            
+          </div>
+        </div>
+        <div className="left w-full md:w-1/2 text-left md:text-left" data-aos="zoom-in-left">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-[#3329e0]">
+            Confused about what color to choose for your home ? <br /> We got you covered !
+          </h1>
+          <p className="my-6">
+          Easily find the perfect color for your home with our AI powered color recommending system. Get the most accurate color recommendations for your home based on the furniture and other objects in your room.
+          </p>
+          <button className="bg-[#3329e0] shadow-lg text-white px-8 py-4 rounded-full mt-12 hover:bg-[#ccc9ff] ease-in transition-all duration-300 hover:text-[#3329e0]">
+            Let's go !
+          </button>
+        </div>
+      </section>
+      
+      <section
+        className="container flex flex-col-reverse md:flex-row justify-center items-center w-full my-12 mx-auto font-nun p-8" data-aos="zoom-in-up">
+        <div className="left w-full md:w-1/2 text-left md:text-left">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-[#3329e0]">
+            Save countless hours of decorating your home with VR
+          </h1>
+          <p className="my-6">
+            Smart Decor features a wide range of home decor products that you can easily add to your home.
+            It provides you with a 3d model of your own room with the products you choose. So you can renovate your house without even getting up from your seat.
+          </p>
+          <p className="my-6">
+            You can easily edit these furniture models and add them to your room. You can also change the color of the furniture to match your room. And with out AI powered color recommendation system, you can easily find the perfect color for your furniture.
+          </p>
+        </div>
+       
+      </section>
+      
+      
+      
+      {/* <div className='w-screen border border-red-800 h-screen'>
+          <Three1 />
+        </div> */}
+        
+        <section
+        className="container flex flex-col-reverse md:flex-row justify-center items-center w-full my-20 mx-auto font-nun p-8">
         <div className=''>
           <div className='grid grid-cols-2 gap-5 mr-10 '>
             <img src={img1} alt="" className="w-60  rounded-lg" />
@@ -78,34 +120,19 @@ export default function Home() {
         </div>
         <div className="left w-full md:w-1/2 text-left md:text-left" data-aos="zoom-in-left">
           <h1 className="text-3xl md:text-4xl font-extrabold text-[#3329e0]">
-            Tired of going through countless colors to match your home ?
+            Want to take your creativity to the next level ?
           </h1>
           <p className="my-6">
-            Easily find the perfect color for your home with our AI powered color recommending system. Get the most accurate color recommendations for your home based on the furniture and other objects in your room.
+            Just tell us what your dream room will look like and our AI will give you the most accurate visualisation of you imagination. 
+            <span>Imagination is the only limit !</span>
           </p>
           <button className="bg-[#3329e0] hover:bg-[#ccc9ff] ease-in transition-all duration-300 hover:text-[#3329e0] shadow-lg text-white px-8 py-4 rounded-full mt-4">
-            Give me some shades !
+            Hell Yes !
           </button>
         </div>
       </section>
-      <section
-        className="container flex flex-col-reverse md:flex-row justify-center items-center w-full my-12 mx-auto font-nun p-8" data-aos="zoom-in-up">
-        <div className="left w-full md:w-1/2 text-left md:text-left">
-          <h1 className="text-3xl md:text-4xl font-extrabold text-[#3329e0]">
-            Save countless hours of decorating your home 
-          </h1>
-          <p className="my-6">
-            Smart Decor features a wide range of home decor products that you can easily add to your home. 
-            It provides you with a 3d model of your own room with the products you choose. So you can renovate your house without even getting up from your seat.
-          </p>
-          <p className="my-6">
-            You can easily edit these furniture models and add them to your room. You can also change the color of the furniture to match your room. And with out AI powered color recommendation system, you can easily find the perfect color for your furniture.
-          </p>
-        </div>
-        <img className="w-full md:w-1/2 my-6 md:my-0"
-          src="https://d33wubrfki0l68.cloudfront.net/d29c8fa1308b7d43c3d2442ec4b2368e2c15e21d/df214/static/awindframe31-55fd67cc4a4a0c0da2e6dcb924864755.png"
-          alt="" />
-      </section>
+        
+        
       <section
         className="container flex flex-col-reverse md:flex-row justify-center items-center w-full my-12 mx-auto font-nun p-8">
         <img className="w-full md:w-1/2 my-6 md:my-0" data-aos="zoom-in-right"
@@ -113,31 +140,13 @@ export default function Home() {
           alt="" />
         <div className="left w-full md:w-1/2 text-left md:text-left" data-aos="zoom-in-left">
           <h1 className="text-3xl md:text-4xl font-extrabold text-[#3329e0]">
-            Collaborate with other team members and get better feedback on designs
-            and code
+            Check out what cool paints you friends are using and never miss the trend.
           </h1>
           <p className="my-6">
-            Add team members to a project and get feedback on the designs,
-            prototypes or code you are working on. Easily allow team members to
-            make edits and corrections to projects
+            Add your friends in your network and see what colors they are using in their rooms and get inspired by them.
           </p>
           <button className="bg-[#3329e0] hover:bg-[#ccc9ff] ease-in transition-all duration-300 hover:text-[#3329e0] shadow-lg text-white px-8 py-4 rounded-full mt-4">
-            Start collaborating
-          </button>
-        </div>
-      </section>
-
-      <section className="bg-[#1A202C] py-16 pb-8 text-white">
-        <div className="text text-center px-8 md:px-28">
-          <p className="mt-6 mb-2">
-            Create beautiful websites, prototypes and designs using an awesome
-            editor and builder
-          </p>
-          <h2 className="font-nun text-4xl font-medium text-white mb-6">
-            Start visually creating webpages using windframe
-          </h2>
-          <button className="bg-[#3329e0] hover:bg-[#ccc9ff] ease-in transition-all duration-300 hover:text-[#3329e0] shadow-lg text-white px-8 py-4 rounded-full mt-4 mb-16">
-            Start creating for you
+            Inspire Me !
           </button>
         </div>
       </section>
@@ -153,11 +162,10 @@ export default function Home() {
                   src="data:image/png;base64,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"
                   alt="" />
               </div>
-              <h1 className="font-black text-2xl">Devwares</h1>
+              <h1 className="font-black text-2xl">Smart Decor</h1>
             </div>
             <p className="font-medium text-md my-4 text-left">
-              We Are Creating High Quality Resources And Tools To Aid Developers
-              During The Development Of Their Projects
+              We are making your paint and home decor problems go away, using our very own AI.
             </p>
             <p className="text-sm font-extralight text-left">
               @sm8uti 2022 All rights Reserved
@@ -165,17 +173,13 @@ export default function Home() {
           </div>
           <div className="help-legal my-2 md:my-8 flex flex-row justify-between w-full xl:w-1/2 mx-auto  p-2 md:p-10 md:pr-2 mt-12">
             <div className="mr-4 md:mr-8">
-              <h2 className="font-bold my-3">Devwares</h2>
+              <h2 className="font-bold my-3">Smart Decor</h2>
               <ul>
-                <li className="my-4 hover:text-blue-700 transition-all ease-in duration-300">
-                  <a href="#">Resources</a>
-                </li>
+
                 <li className="my-4 hover:text-blue-700 transition-all ease-in duration-300">
                   <a href="#">Contact us</a>
                 </li>
-                <li className="my-4 hover:text-blue-700 transition-all ease-in duration-300">
-                  <a href="#">Blog</a>
-                </li>
+
               </ul>
             </div>
             <div className="mr-4 md:mr-8">

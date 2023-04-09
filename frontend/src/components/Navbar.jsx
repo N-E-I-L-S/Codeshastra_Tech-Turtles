@@ -20,6 +20,9 @@ const Navbar = () => {
                         <li>
                             <NavLink className="mx-2 hover:text-[#3329e0] duration-300" to="/contact">Contact Us</NavLink>
                         </li>
+                        <li>
+                            <NavLink className="mx-2 hover:text-[#3329e0] duration-300" to="/virtualhouse">VR</NavLink>
+                        </li>
 
                     </ul>
                 </div>

@@ -13,7 +13,7 @@ export default function Three1() {
 
   return (
     
-      <Canvas style={{ background: "red", height : '100%' }} shadows dpr={[1, 2]}>
+      <Canvas style={{ background: "white", height : '100%' }} shadows dpr={[1, 2]}>
       <ambientLight intensity={0.5} />
       <directionalLight
         intensity={0.5}
