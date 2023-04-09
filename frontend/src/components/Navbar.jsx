@@ -32,7 +32,7 @@ const Navbar = () => {
                             <NavLink className="mx-3 hover:text-[#3329e0] duration-300" to="/inspire">Inspire</NavLink>
                         </li>
                         <li>
-                            <a className="mx-3 hover:text-[#3329e0] duration-300" to="#contact">Contact Us</a>
+                            <NavLink className="mx-3 hover:text-[#3329e0] duration-300" to="/chatbot">Chat With Us</NavLink>
                         </li>
                        
                         

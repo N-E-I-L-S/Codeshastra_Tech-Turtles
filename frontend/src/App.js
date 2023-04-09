@@ -8,6 +8,7 @@ import VirtualHouse from "./pages/VirtualHouse";
 import Visualize from "./pages/Visualize";
 import Inspire from "./pages/Inspire";
 import Recommend from "./pages/Recommend";
+import Hello from "./pages/Chatbot";
 
 function App() {
 
@@ -25,8 +26,7 @@ function App() {
           <Route path="/visualize" element={<Visualize />} />
           <Route path="/inspire" element={<Inspire />} />
           <Route path="/recommend" element={<Recommend />} />
-
-
+          <Route path="/chatbot" element={<Hello />} />
           <Route path="/upload" element={<UploadImage />} />
 
 
