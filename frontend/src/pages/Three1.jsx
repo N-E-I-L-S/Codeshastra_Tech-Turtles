@@ -7,10 +7,10 @@ import * as THREE from "three";
 // import Floor from "../components/Floor.jsx";
 import Room from "../components/Room.jsx";
 
-export default function Three1() {
+export default function Three1(props) {
+  console.log(props.color)
   const [isDragging, setIsDragging] = useState(false);
   const floorPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
-
   return (
     
       <Canvas style={{ background: "white", height : '100%' }} shadows dpr={[1, 2]}>
@@ -40,7 +40,7 @@ export default function Three1() {
       <Obj2 setIsDragging={setIsDragging} floorPlane={floorPlane} />
       {/* <Obj setIsDragging={setIsDragging} floorPlane={floorPlane} />  */}
         {/* <Floor/> */}
-      <Room/>
+      <Room   color={props.color}/>
       <OrthographicCamera makeDefault zoom={50} position={[0, 40, 200]} />
 
       <OrbitControls minZoom={10} maxZoom={50} enabled={!isDragging} />
