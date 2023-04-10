@@ -108,7 +108,7 @@ function UploadImage() {
                         {
                             imgUrl &&
                             <div className=''>
-                                <img className="shadow-lg rounded-lg" src={imgUrl} alt='uploaded file' height={200} />
+                                <img className="shadow-lg rounded-lg" style={{maxHeight: '50vh'}} src={imgUrl} alt='uploaded file' height={200} />
                             </div>
                         }
                     </div>
@@ -124,7 +124,7 @@ function UploadImage() {
                             path ?
                                 <div className="">
                                     {console.log(path)}
-                                    <img style={{ height: '30vh', width: '100%' }} src={image44} alt="Processed Image" />
+                                    <img style={{ maxHeight: '50vh', width: '100%' }} src={image44} alt="Processed Image" />
                                 </div> :
                                 null
                         }

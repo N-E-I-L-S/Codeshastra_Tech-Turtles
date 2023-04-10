@@ -44,7 +44,7 @@ const Button = styled.button`
 
 const API_KEY = "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";
 
-const ImageGenerator = () => {
+const Visualize = () => {
   const [prompt, setPrompt] = useState("");
   const [imageUrl, setImageUrl] = useState("");
 
@@ -99,4 +99,4 @@ const ImageGenerator = () => {
   );
 };
 
-export default Visualize
+export default Visualize;

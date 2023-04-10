@@ -34,7 +34,7 @@ def GetColored():
     
         return (red, green, blue)
     color = hex_to_rgb(input_param2)
-    changeColor('image44.jpg',(300, 100), [color[0], color[1], color[2]], None, input_param1)
+    changeColor('./public/images/image44.jpg',(300, 100), [color[0], color[1], color[2]], None, input_param1)
     # headers = {
     #     'Access-Control-Allow-Origin': '*',
     #     'Access-Control-Allow-Methods': 'POST',
@@ -44,14 +44,16 @@ def GetColored():
     # Create a JSON response with the output
     return jsonify({'result': 'success'})
 
-@app.route('/colorpredict', methods=['POST'])
-@cross_origin(support_credentials= True)
-def color_predict():
-    data = request.get_json()
-    print(data)
-    input_param1 = data['url']
-    changeColor('image46.jpg',(300, 100), predict(), None, input_param1)
-    return jsonify({'result': 'success'})
+# @app.route('/colorpredict', methods=['POST'])
+# @cross_origin(support_credentials= True)
+# def color_predict():
+#     data = request.get_json()
+#     print(data)
+#     input_param1 = data['url']
+#     changeColor('image46.jpg',(300, 100), predict(), None, input_param1)
+#     return jsonify({'result': 'success'})
+
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=8000)
