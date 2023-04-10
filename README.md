@@ -20,6 +20,7 @@ The Wall Paint Colour Recommending System is a web application designed to help 
 * Express.js
 * three.js
 * python (flask)
+* firebase
 
 ## Installation
 
