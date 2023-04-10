@@ -33,11 +33,7 @@ const Navbar = () => {
                         </li>
                         <li>
                             <NavLink className="mx-3 hover:text-[#3329e0] duration-300" to="/inspire">Inspire</NavLink>
-                        </li>
-                        <li>
-                            <NavLink className="mx-3 hover:text-[#3329e0] duration-300" to="/chatbot">Chat With Us</NavLink>
-                        </li>
-                       
+                        </li>                       
                         
 
                     </ul>

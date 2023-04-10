@@ -31,15 +31,13 @@ function UploadImage() {
                 },
                 body: JSON.stringify(
                     {
-                        color: color,
-                        url: imgUrl
+                        url: imgUrl,
                     }
                 ),
                 mode: 'cors',
             })
                 .then(response => response.json())
                 .then(data => {
-                    setPath(data.result)
                     console.log('Output:', data.result);
                     setPath('../../../backend/uc_hack_20-master/uc_hack_20-master/public/edited/image44.jpg')
                 })
@@ -99,7 +97,7 @@ function UploadImage() {
                             }
                             <button type='submit' className=' p-3 mt-4 mb-3 mx-auto btn bg-primary rounded-lg shadow-lg'>Upload</button>
                         </form>
-                            <button type="submit" className="text-blue-600 mx-5">Reset Image</button>
+                            {/* <button type="submit" className="text-blue-600 mx-5">Reset Image</button> */}
 
                     </div>
 
