@@ -1,5 +1,5 @@
 # Codeshastra_Tech-Turtles
-# Project Name
+# AI Decor
 
 Smart Decor
 
